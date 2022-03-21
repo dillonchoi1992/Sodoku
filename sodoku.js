@@ -94,3 +94,35 @@ function selectTile(){
 
     }
 }
+
+function checkScore(){
+    if(errors == 7){
+        gameOver();
+    }
+}
+
+function startGame(){
+    let startDiv = document.getElementById("start");
+    let gameCanvas = document.getElementById("Canvas");
+    let gameOver = document.getElementById("gameover")
+    startDiv.style.display = "none";
+    gameCanvas.style.display ="block";
+    gameOver.style.display = "none";
+    start();
+}
+
+function gameOver(){
+    let startDiv = document.getElementById("start");
+    let gameCanvas = document.getElementById("Canvas");
+    let gameOver = document.getElementById("gameover")
+    startDiv.style.display = "none";
+    gameCanvas.style.display ="none";
+    gameOver.style.display = "block";
+
+    ball.reset();
+    player1.reset();
+    player2.reset();
+
+    clearInterval(loop);
+
+}
